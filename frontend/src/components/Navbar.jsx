@@ -12,7 +12,7 @@ const Navbar = () => {
     <>
       {!currentAccount && (
         <div className="wallet-banner">
-          Please connect your MetaMask wallet to interact with the decentralized marketplace.
+          Please connect your Web3 wallet to interact with the decentralized marketplace.
         </div>
       )}
       <nav className="navbar glass-panel" style={{ margin: '20px 5%', borderRadius: '30px' }}>

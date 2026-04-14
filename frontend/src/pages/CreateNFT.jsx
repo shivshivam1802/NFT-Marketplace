@@ -95,7 +95,7 @@ const CreateNFT = () => {
       </div>
 
       <button onClick={handleCreate} className="btn-primary" style={{ marginTop: '10px' }} disabled={isLoading}>
-        {isLoading ? 'Creating NFT (Confirm in MetaMask)...' : 'Create & List NFT'}
+        {isLoading ? 'Creating NFT (Confirm in Wallet)...' : 'Create & List NFT'}
       </button>
     </div>
   );

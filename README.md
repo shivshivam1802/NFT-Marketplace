@@ -23,7 +23,7 @@
 ### Prerequisites
 Before you begin, ensure you have the following installed and configured:
 *   [Node.js](https://nodejs.org/en/) (v18+ recommended)
-*   [MetaMask](https://metamask.io/) Web3 Wallet browser extension
+*   A Web3 Wallet browser extension (e.g., [MetaMask](https://metamask.io/), Trust Wallet, Rabby)
 *   A [Pinata Gateway](https://pinata.cloud/) account for securing API keys to pin images to IPFS.
 
 ### 1. Installation
@@ -56,7 +56,7 @@ To test and interact with the application locally without spending real Ethereum
 # In the root 'NFT-Marketplace' directory
 npx hardhat node
 ```
-This will generate 20 test accounts. Import one of the private keys into your MetaMask wallet and switch your network to `Localhost 8545`.
+This will generate 20 test accounts. Import one of the private keys into your Web3 wallet and switch your network to `Localhost 8545`.
 
 **Deploy the smart contract:**
 Leave the node running, open a new terminal window, and run:
@@ -70,7 +70,7 @@ Fire up the Vite development server to view your dapp!
 cd frontend
 npm run dev
 ```
-Navigate to `http://localhost:5173` in your browser. Connect your MetaMask wallet, and mint your very first local NFT!
+Navigate to `http://localhost:5173` in your browser. Connect your Web3 wallet, and mint your very first local NFT!
 
 ---
 

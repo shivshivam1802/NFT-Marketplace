@@ -13,7 +13,7 @@ export const NFTProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(false);
 
   const checkIfWalletIsConnected = async () => {
-    if (!window.ethereum) return alert('Please install MetaMask.');
+    if (!window.ethereum) return alert('Please install a Web3 Wallet (like MetaMask).');
     
     const accounts = await window.ethereum.request({ method: 'eth_accounts' });
     if (accounts.length) {
@@ -24,7 +24,7 @@ export const NFTProvider = ({ children }) => {
   };
 
   const connectWallet = async () => {
-    if (!window.ethereum) return alert('Please install MetaMask.');
+    if (!window.ethereum) return alert('Please install a Web3 Wallet (like MetaMask).');
     const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
     setCurrentAccount(accounts[0]);
   };

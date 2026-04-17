@@ -42,8 +42,8 @@ const Home = () => {
 
   return (
     <div>
-      <div className="hero" style={{ padding: '20px 0 40px' }}>
-        <h1 style={{ fontSize: '3rem' }}>Explore <span className="gradient-text">Digital Art</span></h1>
+      <div className="hero">
+        <h1>Explore <span className="gradient-text">Digital Art</span></h1>
       </div>
       
       <div className="nft-grid">

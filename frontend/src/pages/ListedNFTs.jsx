@@ -42,13 +42,13 @@ const ListedNFTs = () => {
 
   return (
     <div>
-      <div className="hero" style={{ padding: '20px 0 40px' }}>
+      <div className="hero">
         <h1 style={{ fontSize: '3rem' }}>Dashboard: <span className="gradient-text">Listed NFTs</span></h1>
       </div>
       
       <div className="nft-grid">
         {nfts.map((nft, i) => (
-          <div key={i} className="nft-card glass-panel" style={{ border: '2px solid var(--secondary-color)' }}>
+          <div key={i} className="nft-card glass-panel">
             <div className="nft-image-container">
               <img src={nft.image} alt={nft.name} className="nft-image" />
             </div>

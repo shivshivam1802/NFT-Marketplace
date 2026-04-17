@@ -9,152 +9,233 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 5%;
+  padding: 18px 5%;
   position: sticky;
-  top: 0;
+  top: 15px;
   z-index: 100;
-  background: rgba(11, 15, 25, 0.8);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--glass-border);
+  background: rgba(3, 0, 20, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255,255,255,0.1);
+  border-radius: 40px;
+  margin: 0 5%;
 }
 
 .nav-logo {
+  font-family: 'Space Grotesk', sans-serif;
   font-size: 1.8rem;
   font-weight: 800;
   display: flex;
   align-items: center;
   gap: 10px;
+  letter-spacing: -0.5px;
 }
 
 .nav-links {
   display: flex;
-  gap: 30px;
+  gap: 35px;
   align-items: center;
 }
 
 .nav-link {
   font-weight: 600;
   color: var(--text-muted);
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
+  position: relative;
+  font-size: 1.05rem;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background: var(--gradient-btn);
+  transition: width 0.3s ease;
+  border-radius: 2px;
 }
 
 .nav-link:hover, .nav-link.active {
   color: white;
 }
 
+.nav-link:hover::after, .nav-link.active::after {
+  width: 100%;
+}
+
 /* Main Content */
 .main-content {
   flex: 1;
-  padding: 40px 5%;
+  padding: 60px 8%;
 }
 
 /* NFT Grid */
 .nft-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 30px;
-  margin-top: 40px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+  margin-top: 50px;
+  padding-bottom: 50px;
 }
 
 /* NFT Card */
 .nft-card {
   padding: 16px;
-  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 18px;
+  position: relative;
+  overflow: hidden;
+}
+
+.nft-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(135deg, transparent, rgba(255,255,255,0.05), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+  pointer-events: none;
+  z-index: 10;
 }
 
 .nft-card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-12px) scale(1.02);
+  border-color: rgba(139, 92, 246, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 30px rgba(139, 92, 246, 0.15);
+}
+
+.nft-card:hover::before {
+  transform: translateX(100%);
 }
 
 .nft-image-container {
   width: 100%;
   aspect-ratio: 1;
-  border-radius: 12px;
+  border-radius: 16px;
   overflow: hidden;
   position: relative;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
 .nft-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nft-card:hover .nft-image {
-  transform: scale(1.05);
+  transform: scale(1.1);
 }
 
 .nft-info {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 8px;
+  padding: 0 8px 8px;
 }
 
 .nft-name {
-  font-size: 1.25rem;
-  font-weight: 600;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: white;
 }
 
 .nft-price-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 10px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255,255,255,0.1);
 }
 
 .nft-price-label {
-  font-size: 0.875rem;
+  font-size: 0.85rem;
   color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .nft-price-value {
-  font-size: 1.1rem;
+  font-size: 1.25rem;
+  font-family: 'Space Grotesk', sans-serif;
   font-weight: 800;
   color: var(--primary-color);
+  text-shadow: 0 0 15px rgba(139, 92, 246, 0.5);
 }
 
 /* Forms */
 .form-container {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 40px;
+  max-width: 650px;
+  margin: 40px auto;
+  padding: 50px;
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 30px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 30px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.05);
+  backdrop-filter: blur(20px);
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
 }
 
 .form-label {
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 1.05rem;
+  color: #e2e8f0;
+  margin-left: 5px;
 }
 
 /* Hero Section */
 .hero {
   text-align: center;
-  padding: 80px 0 60px;
+  padding: 100px 0 80px;
+  position: relative;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 300px;
+  background: var(--primary-color);
+  filter: blur(150px);
+  opacity: 0.2;
+  z-index: -1;
+  border-radius: 50%;
 }
 
 .hero h1 {
-  font-size: 4rem;
-  margin-bottom: 20px;
+  font-size: 5rem;
+  margin-bottom: 25px;
   line-height: 1.1;
+  text-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
 .hero p {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   color: var(--text-muted);
-  max-width: 600px;
-  margin: 0 auto 40px;
+  max-width: 650px;
+  margin: 0 auto 50px;
+  line-height: 1.6;
 }
 
 /* Loader */
@@ -164,27 +245,34 @@
   align-items: center;
   min-height: 50vh;
   flex-direction: column;
-  gap: 20px;
+  gap: 25px;
 }
 
 .spinner {
-  width: 50px;
-  height: 50px;
-  border: 5px solid rgba(139, 92, 246, 0.2);
-  border-top-color: var(--primary-color);
+  width: 60px;
+  height: 60px;
+  border: 4px solid rgba(255,255,255,0.05);
+  border-left-color: var(--primary-color);
+  border-right-color: var(--secondary-color);
   border-radius: 50%;
-  animation: spin 1s linear infinite;
+  animation: spin 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
 }
 
 @keyframes spin {
-  to { transform: rotate(360deg); }
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 /* Wallet Banner */
 .wallet-banner {
   background: var(--gradient-btn);
   color: white;
-  padding: 10px;
+  padding: 12px;
   text-align: center;
   font-weight: 600;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  position: relative;
+  z-index: 101;
 }
